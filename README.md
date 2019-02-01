@@ -24,7 +24,7 @@ Create a new project, then navigate to `Compute Engine` > `VM Instances` and cre
 
 Once you've created your instance, you'll need to open a specific `port` to allow our development server to be publicly accessible on the internet. To do that, navigate to `VPC Network` > `Firewall Rules` and click on `Create Firewall Rule`. Use these settings:
 
-![new firewall rule](img/create-firewall-rule)
+![new firewall rule](img/create-firewall-rule.png)
 
 With these done, go back to `Compute Engine` > `VM Instances` and Start your VM instance. Once it's running, you can connect to it with the `SSH` link. It'll open a terminal where you can issue commands.
 
