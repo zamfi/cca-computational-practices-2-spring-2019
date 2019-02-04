@@ -38,11 +38,13 @@ This will take a little while as it installs a bunch of dependencies and creates
 
 Change into the `hello-world` directory (using `cd hello-world`) and run `npm start`. After a couple of minutes, you should see some "complation succeeded" text with what looks like a URL. That URL won't work -- because you're not on the same local network as your server. Instead, copy the `External IP` from the VM instances page, open up your web browser, and visit *your-ip*`:3000`. For my instance, this was `35.227.190.43:3000` -- you should see a React logo!
 
+You can stop the server by typing control-C (`^C`). Also: use the up/down arrow keys to cycle through previous commands on the command line. Try it: run the server again by pressing the up arrow once and then pressing return.
+
 #### Replacing the generic React starter app
 
-Once you get to this point, open a second terminal window by clicking on `SSH` again. In this terminal, use the `nano` program to edit the file `src/App.js`. Add some text about yourself! Format it nicely, and show us your new CSS chops by styling through `src/App.css`.
+Once you get to this point, open a second terminal window by clicking on `SSH` again. In this terminal, change to the hello-world directory with `cd hello-world` and then use the `nano` program to edit the file `src/App.js`, using the full command `nano src/App.js`. Add some text about yourself! Format it nicely, and show us your new CSS chops by styling through `src/App.css`. Within `nano`, you can save your changes with control-O (`^O` -- that's an "oh", not a "zero") and exit with control-X (`^X`).
 
-Next, you'll replace the generic React server app with the code from [wishing-well](http://github.com/zamfi/wishing-well), our real starting point for Project 1! Copy the contents of wishing-well's `src/App.js` and `src/App.css` into your project.
+Once your'e done, replace the generic React server app with the code from [wishing-well](http://github.com/zamfi/wishing-well), our real starting point for Project 1! Copy the contents of wishing-well's `src/App.js` and `src/App.css` into your project.
 
 #### Extending the wishing well
 
@@ -51,11 +53,21 @@ Make the following changes to the wishing well:
 - Add a bunch of new wisdoms.
 - Create a “new” button that triggers the `addWisdom` function. There's already CSS for this button in `src/App.css` in a class called `new-wisdom`.
 - Ensure a new, different wisdom shows up every time you click. You could guarantee this by cycling from one wisdom to the next. Or by checking to make sure that the new randomly selected wisdom is "different" from the old one.
-- Make the wisdom change every 15 seconds on its own, even if you don't click the button. (The `setInterval` function might be useful here!)
+- Make the wisdom change every 15 seconds on its own, even if you don't click the button. (The [`setInterval`](https://javascript.info/settimeout-setinterval) function might be useful here!)
 
 Challenges (optional):
 - Create a new array of attributions, and display a random attribution for each piece of wisdom.
 - Make the wisdoms show up cumulatively in a list. Do some research on how to display a list in React. Then don’t show more than 3 at a time!
 
 Finally:
-- Make it your own! Reimagine the wishing well on your own in some way. Give it some whimsy, or a new look. Whatever appeals to you!
+- Make it your own! Reimagine the wishing well on your own in some way. Give it some whimsy, or a new look, or new buttons. Whatever appeals to you!
+
+#### Submitting this part of your homework
+
+First, let's get your server program running permanently. You can create a virtual terminal that runs even after you close your terminal window with the `screen` command. In a terminal window, run `screen`. Then, run your server by switching into the `hello-world` directory (with `cd hello-world`) and running `npm start`.
+
+Then you can leave your screen session running by typing control-A (`^A`) followed by the `D` key (for "disconnect").
+
+Confirm that your server is still running by visiting your-ip`:3000` in your browser.
+
+Then, [email me](mailto:zamfi@cca.edu) that link.
