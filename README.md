@@ -71,3 +71,74 @@ Then you can leave your screen session running by typing control-A (`^A`) follow
 Confirm that your server is still running by visiting your-ip`:3000` in your browser.
 
 Then, [email me](mailto:zamfi@cca.edu) that link.
+
+### Week 2
+
+This week, we'll learn how to do development locally (instead of using `nano` on our servers), how to use `git` and GitHub, and how to extend our server functionality to enable some real-time communication. Maybe we'll make a chat app. Who knows!?
+
+#### Creating a repository for your project
+
+There are many ways to share code among computers and people. By far the most common for new projects these days is GitHub. You've used GitHub before to submit homework, but now we're going to extend that work substantially.
+
+First, create a new repository that is **not initialized**:
+
+![not initialized](img/not-initialized.png)
+
+On creation, you'll see some instructions on how to fill in your repository. Keep this page open, you'll need it later!
+
+Next, connect to your Google Cloud server (using the SSH link as you did last week), and run these commands:
+
+`cd hello-world` -- to get into your hello world directory
+
+`git init` -- to create a new Git repository
+
+`git status` -- to show you which files have been changes / are new to the repository since the last commit. (This should be all the files!)
+
+`git diff` -- to show the contents of each changed file
+
+`git add file1 file2 etc` -- where `file1`, `file2`, `etc` are the files that show up when you run `git status`
+
+`git commit -m 'initial commit'` -- to "commit" your changes to the repository
+
+Next, follow the instructions from GitHub for when you already have an existing repository. Should be something like this:
+
+`git remote add origin <some url>`
+`git push -u origin master`
+
+**Congratulations!** When you reload your GitHub repository, you should see your code there. 
+
+#### Creating a local development environment
+
+To allow you to make changes to your code *locally*, meaning on your own computer instead of your server in the Google Cloud, first you'll need to [install `node`](http://nodejs.org) yourself on your computer. You'll also need to [install `git`](https://git-scm.com) if you don't already have it -- I think it's install automatically on Macs and maybe also Windows?
+
+Once you have these, get the "Clone URL" from GitHub for your repository, and clone your repository on your local computer:
+
+`git clone <clone url>`
+
+Then, `cd hello-world` to get into your project folder, and install the "dependencies" -- the libraries required by the server -- using:
+
+`npm install`
+
+And, finally, run your server:
+
+`npm start`
+
+(This last step may fail, reach out to me if so.)
+
+Now you can visit [localhost:3000](http://localhost:3000) in your browser, then edit files like `src/App.js` and `src/App.css` locally and, when you save them, they'll refresh.
+
+#### Starter code for this week
+
+To make sure everyone is on the same page, this week we'll start from a clean slate again. Instead of creating a new project from scratch, we'll take an existing project and clone it directly. Visit [github.com/zamfi/wishing-well](http://github.com/zamfi/wishing-well) and click the big "Fork" button. Then, follow the directions under "Creating a local development environment" above to clone this repository to your computer.
+
+In addition to `npm start`, you'll also need to run a 2nd server program:
+
+`node server/server.js`
+
+This server also requires a new port -- when you run it on your Google Cloud server, you'll need to open port 8080 on your Firewall again, like we did last week.
+
+#### Making it Chat
+
+We'll do this together!
+
+
