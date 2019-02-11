@@ -149,4 +149,31 @@ Clone the repository to your local computer; in a terminal (*not* an SSH termina
 
 Then, `cd wishing-well` should take you into the project folder, where as usual `npm install` followed by `npm start` will start your server locally. This version of wishing-well is actually made up of two servers, not just one. We'll talk about this more in class, but for now, you'll need to open a second terminal window, `cd wishing-well` into your project folder, and run `node server/server.js`. 
 
-Now that you have both servers running, you're ready to make some changes.
+Now that you have both servers running, you're ready to make some changes. **Note: if you're having trouble getting both servers running, please reach out to me [on Slack](http://computationalpractice.slack.com)!**
+
+This new wishing well is similar to the old wishing well, except I added an `authors` array and a server that forwards "broadcasts" between all browsers connected to the same server. **Test this by opening two browser windows pointed to your local server, and clicking the "New" button to trigger a broadcast.**
+
+The changes I made are incomplete, however. The authors array is not kept up-to-date when adding new wisdoms, and the authors aren't displayed. Fix that by:
+
+1. Modify the `setWisdom()` function so that it sets the `state`'s `author` property as well as the `wisdom` property.
+2. Modify the `render()` function so that is displays `this.state.author` information too. Use CSS to style it and make it look nice!
+3. Modify the `addWisdom()` function to include the `author` in the broadcast `message` object.
+4. Modify the `handleMessage()` function to push the `message`'s `author` onto the `authors` array.
+
+Next, let's extend a little bit further:
+
+1.  Add emojis! Automate the adding of emojis to messages. For example, after getting the wisdom from the message, but before pushing it onto the array (there's a comment in `handleMessage` for you, you can modify the wisdom variable. Two possibilities: use `replace` to replace specific text with an emoji, e.g., `wisdom = wisdom.replace(":smile:", "😃”)`. Or, use an `if` statement with `indexOf` to check if a word is present and then add an emoji to the end, e.g.: 
+    ```
+    if (wisdom.includes("tree")) { 
+      wisdom = wisdom + "🌲"; 
+    }
+    ```
+    (Fancy versions of this could use an object to link words to emojis! Ask me how on Slack.)
+    
+2. **Challenge**: There’s a `lastListItems` function. Use it to show the last five wisdoms in the list! Use CSS to style the wisdom and author appropriately.
+3. **Super challenge**: add wisdom “likes”, a button that people can click to send an emoji message back to everyone else on the wishing well. (You’ll need to track how many likes each wisdom has, and broadcast a message that’s just a like, not a new wisdom.)
+4. **Super challenge**: learn about how to use <input> tags with React, and use an input tag instead of the `prompt` function for names & wisdoms.
+
+When you're done making changes, use `git commit -a -m 'your message here'` to checkpoint your changes, `git push` to push your changes to GitHub, and then [email me](mailto:zamfi@cca.edu) a link to your forked repository. (You'll need to be in your project folder in a terminal to run those `git` commands.)
+
+As always, find me [on Slack](http://computationalpractice.slack.com) if you have any questions!
