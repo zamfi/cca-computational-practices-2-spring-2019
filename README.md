@@ -137,8 +137,16 @@ In addition to `npm start`, you'll also need to run a 2nd server program:
 
 This server also requires a new port -- when you run it on your Google Cloud server, you'll need to open port 8080 on your Firewall again, like we did last week.
 
-#### Making it Chat
+### Week 2 Homework
 
-We'll do this together!
+This week, make sure that you **fork** the wishing-well starter code into your GitHub account, and then clone it to your computer for local development.
 
+Visit [github.com/zamfi/wishing-well](http://github.com/zamfi/wishing-well) and click the big "Fork" button. Once it's forked, get the "Clone URL" from GitHub for your repository. (There should be a big green 
 
+Clone the repository to your local computer; in a terminal (*not* an SSH terminal to your server), run:
+
+`git clone <clone-url>` -- replace `<clone-url>` with the URL you found on GitHub. Thus, your command should look like `git clone https://github.com/not-a-name/wishing-well` or something similar. (Note the lack of `<` and `>` symbols in the actual command.)
+
+Then, `cd wishing-well` should take you into the project folder, where as usual `npm install` followed by `npm start` will start your server locally. This version of wishing-well is actually made up of two servers, not just one. We'll talk about this more in class, but for now, you'll need to open a second terminal window, `cd wishing-well` into your project folder, and run `node server/server.js`. 
+
+Now that you have both servers running, you're ready to make some changes.
