@@ -153,7 +153,7 @@ Now that you have both servers running, you're ready to make some changes. **Not
 
 This new wishing well is similar to the old wishing well, except I added an `authors` array and a server that forwards "broadcasts" between all browsers connected to the same server. **Test this by opening two browser windows pointed to your local server, and clicking the "New" button to trigger a broadcast.**
 
-The changes I made are incomplete, however. The authors array is not kept up-to-date when adding new wisdoms, and the authors aren't displayed. Fix that by:
+The changes I made are incomplete, however. The authors array is not kept up-to-date when adding new wisdoms, and the authors aren't displayed. Fix that by updating `App.js` using your favorite text editor ([Atom](http://atom.io)? [Sublime Text](http://sublimetext.com)? Something else?):
 
 1. Modify the `setWisdom()` function so that it sets the `state`'s `author` property as well as the `wisdom` property.
 2. Modify the `render()` function so that is displays `this.state.author` information too. Use CSS to style it and make it look nice!
