@@ -151,7 +151,7 @@ Then, `cd wishing-well` should take you into the project folder, where as usual 
 
 Now that you have both servers running, you're ready to make some changes. **Note: if you're having trouble getting both servers running, please reach out to me [on Slack](http://computationalpractice.slack.com)!**
 
-This new wishing well is similar to the old wishing well, except I added an `authors` array and a server that forwards "broadcasts" between all browsers connected to the same server. **Test this by opening two browser windows pointed to your local server, and clicking the "New" button to trigger a broadcast.**
+This new wishing well is similar to the old wishing well, except I added an `authors` array and a server that forwards "broadcasts" between all browsers connected to the same server. **Test this by opening two browser windows pointed to [localhost:3000](http://localhost:3000), and then click the "New" button in one window to trigger a broadcast that updates the other window too.**
 
 The changes I made are incomplete, however. The authors array is not kept up-to-date when adding new wisdoms, and the authors aren't displayed. Fix that by updating `App.js` using your favorite text editor ([Atom](http://atom.io)? [Sublime Text](http://sublimetext.com)? Something else?):
 
