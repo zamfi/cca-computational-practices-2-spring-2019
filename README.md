@@ -279,7 +279,7 @@ Of course, trying to compare versions of code across websites is a pain -- [so h
 **Your assignment**: to copy these changes into your own choose-your-own-adventure story, and use them to create your story. When copying, pay **extremely** close attention to **where** in the code these changes go. You may need more context than what you see in the diff; [here's a link to the full file](https://github.com/zamfi/choose-your-own-adventure/blob/d0fe387359027f82a0572d729cdad1b1ddb96b01/src/index.js). Putting the changed blocks of code in the wrong place may break your app! Make liberal use of undo, and of course [find me on Slack](http://computationalpractice.slack.com) if you get stuck.
 
 Once you've incorporated these changes, it may be helpful to understand a bit how they work:
-1. Any user data is stored in the App's state, in a property (that's its own object!) called userData.
+1. Any user data is stored in the App's `state`, in a property (that's its own object!) called `userData`.
 2. In the `Page`'s `render()` function, there's now an `if (pageData.input) {` condition that creates the various input elements based on the `input` property of the current page.
 3. Each page described in the `pages` object now (optionally) contains an `input` property (like the `ontheship` and `onthetrain` pages). See if you can figure out what the various subproperties, like `type`, `saveKey`, and `values` do!
 
