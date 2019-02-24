@@ -281,4 +281,14 @@ Of course, trying to compare versions of code across websites is a pain -- [so h
 Once you've incorporated these changes, it may be helpful to understand a bit how they work:
 1. Any user data is stored in the App's state, in a property (that's its own object!) called userData.
 2. In the `Page`'s `render()` function, there's now an `if (pageData.input) {` condition that creates the various input elements based on the `input` property of the current page.
-3. 
+3. Each page described in the `pages` object now (optionally) contains an `input` property (like the `ontheship` and `onthetrain` pages). See if you can figure out what the various subproperties, like `type`, `saveKey`, and `values` do!
+
+Of course, this just saves the data, but doesn't actually **use** it for anything. **How would you do that?**
+
+This is likely to be a bit more challenging than we did in class. You don't have to do it alone! Ask me or the [#cp2 slack channel](computationalpractice.slack.com/messages/CFQELPFQT) for help.
+
+Once you've got that done, your **next assignment** is to build out your narrative.
+
+Submit your homework by using the codesandbox **export to GitHub** option, and [send me a link](mailto:zamfi@cca.edu) to the github repository.
+
+**Super bonus challenge**: React, of course, can do almost anything you want with the data in `pages` -- figure out an "overview" mode that shows you all the pages *and* the links between them. (Probably you'll wnat to start with the `start` page and go from there. A ["breadth-first" tree traversal](https://www.cs.bu.edu/teaching/c/tree/breadth-first/) may be what you want... Find me [on Slack](http://computationalpractice.slack.com) for ideas!
