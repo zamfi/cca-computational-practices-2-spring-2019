@@ -177,3 +177,108 @@ Next, let's extend a little bit further:
 When you're done making changes, use `git commit -a -m 'your message here'` to checkpoint your changes, `git push` to push your changes to GitHub, and then [email me](mailto:zamfi@cca.edu) a link to your forked repository. (You'll need to be in your project folder in a terminal to run those `git` commands.)
 
 As always, find me [on Slack](http://computationalpractice.slack.com) if you have any questions!
+
+### Week 3
+
+Homework review
+
+No homework this week.
+
+### Week 4
+
+This week, we took a look at a new React project, a choose-your-own-adventure website. But the code was missing some important features! Here's what we started with:
+
+```javascript
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+
+import "./styles.css";
+
+var pages = {
+  start: {
+    content:
+      "Welcome, traveler! How would you like to get to your destination?",
+    label1: "Train",
+    label2: "Ship",
+    page1: "onthetrain",
+    page2: "ontheship"
+  },
+  onthetrain: {
+    content:
+      "Welcome aboard the choo-choo train! Please make your way to your seat. What's the number?",
+    label1: "12E",
+    label2: "97C",
+    page1: "death",
+    page2: "life"
+  }
+};
+
+class Page extends Component {
+  render() {
+    var pageData = pages[this.props.pageName];
+    var goToPage = this.props.goToPage;
+
+    function goToPage1() {
+      goToPage(pageData.page1);
+    }
+
+    // TODO: add second button
+    return (
+      <div>
+        <p>{pageData.content}</p>
+        <button onClick={goToPage1}>{pageData.label1}</button>
+      </div>
+    );
+  }
+}
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: "start"
+    };
+
+    this.goToPage = this.goToPage.bind(this);
+  }
+
+  goToPage(pageName) {
+    this.setState({
+      page: pageName
+    });
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Page pageName={this.state.page} goToPage={this.goToPage} />
+      </div>
+    );
+  }
+}
+
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
+```
+
+In class, we added the (missing) second button, added some `if` statements to make the buttons optional (that is, hidden if they're omitted from the data file), and added support for images. We ended up writing [this code](https://codesandbox.io/s/5yzjrr4nkx) in class together.
+
+We also discussed the basic architecture of React: There's some underlying "immutable" data, and React **components** use that data to render out **HTML** to display to the user. That **HTML** also then passes **events** like clicks, keystrokes, etc. back to the **components**. In addition to the underlying "immutable" data, there's also **user state** -- in our app, this consists of what page the user is on. You'll extend this in the homework.
+
+#### Week 4 Homework
+
+As requested, this week's homework is to add a way to allow for user input in the choose-your-own-adventure project we started working on in class.
+
+First, here's another link to [the original code we wrote together during class](https://codesandbox.io/s/5yzjrr4nkx), including images and (both) optional buttons.
+
+Next, [here's a version of the same code, on GitHub](https://github.com/zamfi/choose-your-own-adventure), that includes custom user input: in the `pages` object you can now specify what types of data to gather from the user, and what to name that data.
+
+Of course, trying to compare versions of code across websites is a pain -- [so here's what's called a **diff**, a page showing you the differences between two versions of the same file](https://github.com/zamfi/choose-your-own-adventure/commit/d0fe387359027f82a0572d729cdad1b1ddb96b01?diff=split).
+
+**Your assignment**: to copy these changes into your own choose-your-own-adventure story, and use them to create your story. When copying, pay **extremely** close attention to **where** in the code these changes go. You may need more context than what you see in the diff; [here's a link to the full file](https://github.com/zamfi/choose-your-own-adventure/blob/d0fe387359027f82a0572d729cdad1b1ddb96b01/src/index.js). Putting the changed blocks of code in the wrong place may break your app! Make liberal use of undo, and of course [find me on Slack](http://computationalpractice.slack.com) if you get stuck.
+
+Once you've incorporated these changes, it may be helpful to understand a bit how they work:
+1. Any user data is stored in the App's state, in a property (that's its own object!) called userData.
+2. In the `Page`'s `render()` function, there's now an `if (pageData.input) {` condition that creates the various input elements based on the `input` property of the current page.
+3. 
