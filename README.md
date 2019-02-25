@@ -98,7 +98,7 @@ Next, connect to your Google Cloud server (using the SSH link as you did last we
 
 `git add file1 file2 etc` -- where `file1`, `file2`, `etc` are the files that show up when you run `git status`
 
-`git commit -m 'initial commit'` -- to "commit" your changes to the repository
+`git commit -m "initial commit"` -- to "commit" your changes to the repository
 
 Next, follow the instructions from GitHub for when you already have an existing repository. Should be something like this:
 
@@ -162,7 +162,7 @@ The changes I made are incomplete, however. The authors array is not kept up-to-
 
 Next, let's extend a little bit further:
 
-1.  Add emojis! Automate the adding of emojis to messages. For example, after getting the wisdom from the message, but before pushing it onto the array (there's a comment in `handleMessage` for you, you can modify the wisdom variable. Two possibilities: use `replace` to replace specific text with an emoji, e.g., `wisdom = wisdom.replace(":smile:", "😃”)`. Or, use an `if` statement with `indexOf` to check if a word is present and then add an emoji to the end, e.g.: 
+1.  Add emojis! Automate the adding of emojis to messages. For example, after getting the wisdom from the message, but before pushing it onto the array (there's a comment in `handleMessage` for you, you can modify the wisdom variable. Two possibilities: use `replace` to replace specific text with an emoji, e.g., `wisdom = wisdom.replace(":smile:", "😃")`. Or, use an `if` statement with `indexOf` to check if a word is present and then add an emoji to the end, e.g.: 
     ```
     if (wisdom.includes("tree")) { 
       wisdom = wisdom + "🌲"; 
@@ -174,7 +174,7 @@ Next, let's extend a little bit further:
 3. **Super challenge**: add wisdom “likes”, a button that people can click to send an emoji message back to everyone else on the wishing well. (You’ll need to track how many likes each wisdom has, and broadcast a message that’s just a like, not a new wisdom.)
 4. **Super challenge**: learn about how to use <input> tags with React, and use an input tag instead of the `prompt` function for names & wisdoms.
 
-When you're done making changes, use `git commit -a -m 'your message here'` to checkpoint your changes, `git push` to push your changes to GitHub, and then [email me](mailto:zamfi@cca.edu) a link to your forked repository. (You'll need to be in your project folder in a terminal to run those `git` commands.)
+When you're done making changes, use `git commit -a -m "your message here"` to checkpoint your changes, `git push` to push your changes to GitHub, and then [email me](mailto:zamfi@cca.edu) a link to your forked repository. (You'll need to be in your project folder in a terminal to run those `git` commands.)
 
 As always, find me [on Slack](http://computationalpractice.slack.com) if you have any questions!
 
