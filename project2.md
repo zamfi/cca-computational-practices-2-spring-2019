@@ -20,7 +20,7 @@ So, what does this system need?
 
 In class, we connected the infrared receiver to the Arduino, and confirmed that we can see what numbers are transmitted when we press specific buttons on the remote. We used the `irRecvDemo` code:
 
-```arduino
+```c
 /*
  * IRremote: IRrecvDemo - demonstrates receiving IR codes with IRrecv
  * An IR detector/demodulator must be connected to the input RECV_PIN.
