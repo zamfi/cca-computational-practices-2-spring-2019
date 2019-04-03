@@ -10,7 +10,7 @@ The goals are:
 
 ### Week 1-2
 
-In this two-week group assignment, you'll build a remote control cardboard box. 
+In this two-week group assignment, you'll [build a remote control cardboard box](img/rc-box-slides.pdf).
 
 So, what does this system need?
 
@@ -73,3 +73,18 @@ Once you have a working box, make the following changes:
    -  Add "turn signals" that blink whenever the box is turning.
    -  Add a "reverse" light that turns on when the box moves backwards.
 -  Go crazy with the mechanics: add two more wheels, and figure out a way to turn them using a servo motor. (Some research will be required!)
+
+
+### Week 4
+
+This week, use the [boxbot template](https://github.com/zamfi/boxbot-controller) to create a React interface to your Pi-enabled cardboard box.
+
+Your homework assignment is to complete documentation for your project. This should include:
+
+- Your code
+- A system diagram
+- An electrical schematic (feel free to build from [this fritzing document](img/arduino+driver+motors.fzz)
+- A written description of your project outcome.
+
+Put these in a github repository and [email me](mailto:zamfi@cca.edu) the link!
+
